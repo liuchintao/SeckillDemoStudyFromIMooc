@@ -21,7 +21,7 @@ import seckill.exception.SeckillCloseException;
 import seckill.service.SeckillService;
 
 @Controller
-@RequestMapping("/seckill")//url:/模块/资源/{id}/细分	/seckill/list/1000/execution
+//@RequestMapping("/myseckill")//url:/模块/资源/{id}/细分	/seckill/list/1000/execution
 public class SeckillController {
 	
 	@Autowired
@@ -32,10 +32,11 @@ public class SeckillController {
 		//get list page
 		List<SeckillBean> list = seckillService.getSeckillList();
 		model.addAttribute("list", list);
+		System.out.println(list.get(0).getStartTime());
 		return "list";
 	}
 	
-	@RequestMapping(value="{/seckillId}/detail", method=RequestMethod.GET)
+	@RequestMapping(value="/{seckillId}/detail", method=RequestMethod.GET)
 	public String detail(@PathVariable("seckillId") Long seckillId, Model model){
 		if(seckillId == null){	
 			return "redirect:seckill/list";
@@ -65,7 +66,7 @@ public class SeckillController {
 	}
 	
 	@RequestMapping(value="/{seckillId}/{md5}/execution",method=RequestMethod.POST,
-			produces="application/json,charset=UTF-8")
+			produces="application/json;charset=UTF-8")
 	public SeckillResult<SeckillExecution> execute(@PathVariable("seckillId")Long seckillId, 
 			@PathVariable("md5")String md5, 
 			@CookieValue(value="killPhone",required=false)Long phone){

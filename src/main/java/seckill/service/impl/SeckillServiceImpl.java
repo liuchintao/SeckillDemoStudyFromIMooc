@@ -47,7 +47,7 @@ public class SeckillServiceImpl implements SeckillService {
 	public Exposer exportSeckillUrl(long seckillId) {
 		SeckillBean seckillBean = seckillDao.queryById(seckillId);
 		if(seckillBean == null)		return new Exposer(false,seckillId);
-		Date startTime = seckillBean.getStartTiem();
+		Date startTime = seckillBean.getStartTime();
 		Date endTime = seckillBean.getEndTime();
 		Date nowTime = new Date();
 		

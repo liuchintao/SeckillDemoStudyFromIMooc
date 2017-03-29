@@ -47,12 +47,12 @@ public class SeckillBean {
 		this.createTime = createTime;
 	}
 
-	public Date getStartTiem() {
+	public Date getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTiem(Date startTiem) {
-		this.startTime = startTiem;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 
 	public Date getEndTime() {
