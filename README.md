@@ -1,0 +1,2 @@
+# SeckillDemoStudyFromIMooc
+慕课网java高并发秒杀系列教程DEMO，这门课综合了Spring+SpringMVC+Mybaits，算是一个比较容易上手吧知识融会贯通的系列课程，前三节分别是Dao层、Service层、Controller层的设计与实现。第四节引入高并发知识，对于SSM框架快速入门很有帮助，但是没有太多深层次的东西，想要学好用好SSM还需要相关资料充实
