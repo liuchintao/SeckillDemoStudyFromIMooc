@@ -2,6 +2,7 @@ package seckill.dao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -14,4 +15,6 @@ public interface SeckillDao {
 	public SeckillBean queryById(long seckillId);
 	
 	public List<SeckillBean> queryAll(@Param("offset")int offset,@Param("limit") int limit);
+	
+	public void executeProcedure(Map<String,Object> params);
 }
