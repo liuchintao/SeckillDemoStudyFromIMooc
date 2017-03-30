@@ -1,6 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@include file="common/tag.jsp" %>
 <!DOCTYPE html>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title>秒杀详情页</title>
@@ -67,16 +71,23 @@
 <%--jQuery countDown倒计时插件--%>
 <script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 
-<!-- <script src="/resource/script/seckill.js" type="text/javascript"></script>
+<script src="<%=basePath %>resources/script/seckill.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-    $(function () {
-        //使用EL表达式传入参数
-        seckill.detail.init({
-            seckillId:${seckill.seckillId},
-            startTime:${seckill.startTime.time},//毫秒
-            endTime:${seckill.endTime.time}
-        });
-    })
-</script> -->
+<script type="text/javascript">	
+/* $(function(){
+	seckill.detail.init({
+		seckillId:${seckill.seckillId},
+		startTime:${seckill.startTime.time},
+		endTime:${seckill.endTime.time}
+	});
+}) */
+ $(function(){
+	    //使用EL表达式传入参数
+	    seckill.detail.init({
+	        seckillId: "${seckill.seckillId}",
+	        startTime: "${seckill.startTime.time}",
+	        endTime: "${seckill.endTime.time}"
+	       });
+	    })
+</script>
 </html>
